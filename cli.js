@@ -44,9 +44,9 @@ switch (inputFileParam.match(/(.*)(?:\.([^.]+$))/)[2]) {
 if (userArgs.indexOf('--watch') !== -1) {
     fs.watch(inputFileParam, function () {
         console.log('file ' + inputFileParam + ' changed!');
-        i18nGenerator(inputFileParam, outputFileParam, false, filetype);
+        i18nGenerator(inputFileParam, outputFileParam, true, filetype);
     });
 } else {
     // i18n test/input.txt test/temp
-    i18nGenerator(inputFileParam, outputFileParam, false, filetype);
+    i18nGenerator(inputFileParam, outputFileParam, true, filetype);
 }
